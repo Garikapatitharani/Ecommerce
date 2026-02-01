@@ -25,8 +25,9 @@ export default function Login() {
 
     try {
       const res = await loginUser(form);
+      alert(res.message); //login successful ✅🎉
       saveAuth(res);
-      nav("/productlist");
+      setTimeout(()=> nav("/productlist"),200);
     } catch {
       alert("Login failed. Check credentials format.");
     }
